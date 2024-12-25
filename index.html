@@ -88,23 +88,55 @@
         .btn:hover {
             background: #0056b3;
         }
+
+        .game-container {
+            margin: 2rem auto;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border: 1px solid #333;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cell.taken {
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>蔡志陞</h1>
+        <h1>Cai Chih Sheng</h1>
         <p>Web Developer | Designer | Programmer</p>
     </header>
 
     <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#game">Tic Tac Toe</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I'm 蔡志陞, a passionate web developer with a knack for creating elegant and functional websites. I specialize in HTML, CSS, and JavaScript, and I love building projects that make people's lives easier.</p>
+        <p>Hello! I'm Cai Chih Sheng, a passionate web developer with a knack for creating elegant and functional websites. I specialize in HTML, CSS, and JavaScript, and I love building projects that make people's lives easier.</p>
         <a href="#contact" class="btn">Contact Me</a>
     </section>
 
@@ -118,6 +150,25 @@
         </ul>
     </section>
 
+    <section id="game">
+        <h2>Tic Tac Toe</h2>
+        <div class="game-container">
+            <div class="board" id="board">
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+            </div>
+            <p id="game-message"></p>
+            <button onclick="startGame()" class="btn">Restart Game</button>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Contact</h2>
         <p>If you'd like to get in touch, feel free to reach out via email or social media.</p>
@@ -128,5 +179,70 @@
     <footer>
         <p>&copy; 2024 Cai Chih Sheng. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        const board = document.querySelectorAll("[data-cell]");
+        const message = document.getElementById("game-message");
+        let currentPlayer = "X";
+        let isGameActive = true;
+
+        function checkWin() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            return winPatterns.some(pattern => {
+                return pattern.every(index => {
+                    return board[index].innerText === currentPlayer;
+                });
+            });
+        }
+
+        function checkDraw() {
+            return [...board].every(cell => {
+                return cell.innerText === "X" || cell.innerText === "O";
+            });
+        }
+
+        function handleClick(event) {
+            if (!isGameActive) return;
+
+            const cell = event.target;
+
+            if (cell.classList.contains("taken")) return;
+
+            cell.innerText = currentPlayer;
+            cell.classList.add("taken");
+
+            if (checkWin()) {
+                message.innerText = `${currentPlayer} Wins!`;
+                isGameActive = false;
+            } else if (checkDraw()) {
+                message.innerText = "It's a Draw!";
+                isGameActive = false;
+            } else {
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+                message.innerText = `Player ${currentPlayer}'s Turn`;
+            }
+        }
+
+        function startGame() {
+            board.forEach(cell => {
+                cell.innerText = "";
+                cell.classList.remove("taken");
+            });
+            currentPlayer = "X";
+            isGameActive = true;
+            message.innerText = `Player ${currentPlayer}'s Turn`;
+        }
+
+        board.forEach(cell => {
+            cell.addEventListener("click", handleClick);
+        });
+
+        startGame();
+    </script>
 </body>
 </html>
