@@ -3,10 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Page</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cai Chih Sheng - Personal Page</title>
+    <style>
+        /* 內嵌 CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        nav {
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        section#about {
+            background: #fff;
+        }
+
+        section#projects {
+            background: #f8f9fa;
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            margin-top: 1rem;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello,蔡志陞!</h1>
-    <p>This is my first GitHub Page!</p>
+    <header>
+        <h1>Cai Chih Sheng</h1>
+        <p>Web Developer | Designer | Programmer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Cai Chih Sheng, a passionate web developer with a knack for creating elegant and functional websites. I specialize in HTML, CSS, and JavaScript, and I love building projects that make people's lives easier.</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on:</p>
+        <ul>
+            <li><a href="https://github.com/998rrr/my-website" target="_blank">My Personal Website</a></li>
+            <li><a href="#" target="_blank">E-commerce Store</a></li>
+            <li><a href="#" target="_blank">Blogging Platform</a></li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch, feel free to reach out via email or social media.</p>
+        <p>Email: <a href="mailto:artzx6589@gmail.com">artzx6589@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/998rrr" target="_blank">github.com/998rrr</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cai Chih Sheng. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
