@@ -1,260 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Page</title>
-</head>
-<body>
-    <h1>Hello, 蔡志陞!</h1>
-    <p>This is my first GitHub Page!</p>
-</body>
-</html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cai Chih Sheng - Personal Page</title>
+    <title>個人簡介</title>
     <style>
-        /* 內嵌 CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #f4f4f9;
         }
-
         header {
-            background: #007bff;
+            background: #4CAF50;
             color: white;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             text-align: center;
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
-
-        header p {
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
+        section {
+            margin-bottom: 2rem;
         }
-
+        h2 {
+            color: #4CAF50;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #f4f4f4;
+            margin-top: 2rem;
+        }
+        .profile-img {
+            display: block;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
         nav {
-            background: #333;
-            color: white;
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
         }
-
         nav a {
-            color: white;
-            margin: 0 1rem;
+            margin: 0 10px;
             text-decoration: none;
+            color: #4CAF50;
         }
-
         nav a:hover {
             text-decoration: underline;
         }
-
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        section#about {
-            background: #fff;
-        }
-
-        section#projects {
-            background: #f8f9fa;
-        }
-
-        footer {
-            text-align: center;
-            background: #333;
-            color: white;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            margin-top: 1rem;
-            background: #007bff;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background: #0056b3;
-        }
-
-        .game-container {
-            margin: 2rem auto;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .board {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            grid-template-rows: repeat(3, 100px);
-            gap: 5px;
-            justify-content: center;
-        }
-
-        .cell {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100px;
-            height: 100px;
-            background-color: #fff;
-            border: 1px solid #333;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .cell.taken {
-            cursor: not-allowed;
+        audio {
+            display: block;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Cai Chih Sheng</h1>
-        <p>Web Developer | Designer | Programmer</p>
+        <h1>歡迎來到我的個人網頁</h1>
     </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#game">Tic Tac Toe</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">關於我</a>
+        <a href="#skills">技能</a>
+        <a href="#contact">聯絡方式</a>
     </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Cai Chih Sheng, a passionate web developer with a knack for creating elegant and functional websites. I specialize in HTML, CSS, and JavaScript, and I love building projects that make people's lives easier.</p>
-        <a href="#contact" class="btn">Contact Me</a>
-    </section>
+    <div class="container">
+        <section id="about">
+            <h2>關於我</h2>
+            <img src="profile.jpg" alt="個人照片" class="profile-img">
+            <p>你好！我是蔡志陞，一位熱衷於[你的專業或興趣]的人。我喜歡[你的愛好或活動]，並且致力於[你的目標或價值觀]。</p>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Here are some of the projects I've worked on:</p>
-        <ul>
-            <li><a href="https://github.com/998rrr/my-website" target="_blank">My Personal Website</a></li>
-            <li><a href="#" target="_blank">E-commerce Store</a></li>
-            <li><a href="#" target="_blank">Blogging Platform</a></li>
-        </ul>
-    </section>
+        <section id="skills">
+            <h2>技能</h2>
+            <ul>
+                <li>技能 1</li>
+                <li>技能 2</li>
+                <li>技能 3</li>
+                <li>更多技能...</li>
+            </ul>
+        </section>
 
-    <section id="game">
-        <h2>Tic Tac Toe</h2>
-        <div class="game-container">
-            <div class="board" id="board">
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-            </div>
-            <p id="game-message"></p>
-            <button onclick="startGame()" class="btn">Restart Game</button>
-        </div>
-    </section>
+        <section id="contact">
+            <h2>聯絡方式</h2>
+            <p>電子郵件：<a href="mailto:artzx6589@gmail.com">artzx6589@gmail.com</a></p>
+            <p>電話：+123-456-7890</p>
+            <p>社交媒體：<a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you'd like to get in touch, feel free to reach out via email or social media.</p>
-        <p>Email: <a href="mailto:artzx6589@gmail.com">artzx6589@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/998rrr" target="_blank">github.com/998rrr</a></p>
-    </section>
+        <section id="music">
+            <h2>我的音樂</h2>
+            <audio controls>
+                <source src="青春年少.mp3" type="audio/mpeg">
+                您的瀏覽器不支援音訊播放，請下載 <a href="青春年少.mp3">青春年少.mp3</a> 來收聽。
+            </audio>
+        </section>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Cai Chih Sheng. All Rights Reserved.</p>
+        <p>&copy; 2025 蔡志陞. 保留所有權利。</p>
+        <p>專案名稱：my-website</p>
+        <p>帳號名稱：998rrr</p>
     </footer>
-
-    <script>
-        const board = document.querySelectorAll("[data-cell]");
-        const message = document.getElementById("game-message");
-        let currentPlayer = "X";
-        let isGameActive = true;
-
-        function checkWin() {
-            const winPatterns = [
-                [0, 1, 2], [3, 4, 5], [6, 7, 8],
-                [0, 3, 6], [1, 4, 7], [2, 5, 8],
-                [0, 4, 8], [2, 4, 6]
-            ];
-
-            return winPatterns.some(pattern => {
-                return pattern.every(index => {
-                    return board[index].innerText === currentPlayer;
-                });
-            });
-        }
-
-        function checkDraw() {
-            return [...board].every(cell => {
-                return cell.innerText === "X" || cell.innerText === "O";
-            });
-        }
-
-        function handleClick(event) {
-            if (!isGameActive) return;
-
-            const cell = event.target;
-
-            if (cell.classList.contains("taken")) return;
-
-            cell.innerText = currentPlayer;
-            cell.classList.add("taken");
-
-            if (checkWin()) {
-                message.innerText = `${currentPlayer} Wins!`;
-                isGameActive = false;
-            } else if (checkDraw()) {
-                message.innerText = "It's a Draw!";
-                isGameActive = false;
-            } else {
-                currentPlayer = currentPlayer === "X" ? "O" : "X";
-                message.innerText = `Player ${currentPlayer}'s Turn`;
-            }
-        }
-
-        function startGame() {
-            board.forEach(cell => {
-                cell.innerText = "";
-                cell.classList.remove("taken");
-            });
-            currentPlayer = "X";
-            isGameActive = true;
-            message.innerText = `Player ${currentPlayer}'s Turn`;
-        }
-
-        board.forEach(cell => {
-            cell.addEventListener("click", handleClick);
-        });
-
-        startGame();
-    </script>
 </body>
 </html>
-
